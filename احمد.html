@@ -1,11 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عيادة د. مير أشرف - علاج طبيعي</title>
+  <!-- خط القاهرة من جوجل -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- مكتبة أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* إعدادات عامة */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f4f8fb;
+      color: #1e293b;
+    }
+
+    /* تصميم الناف بار */
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 119, 182, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* تصميم الشعار (اللوجو) */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0077b6;
+      box-shadow: 0 4px 10px rgba(0, 180, 216, 0.25);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dr-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: #023e8a;
+      line-height: 1.2;
+    }
+
+    .dr-specialty {
+      font-size: 13px;
+      color: #6c757d;
+      font-weight: 600;
+    }
+
+    /* الروابط */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 5px 0;
+    }
+
+    /* خط سفلي متحرك عند تمرير الماوس */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2.5px;
+      background-color: #0077b6;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #0077b6;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* زر تواصل عبر الواتساب */
+    .btn-book {
+      background: linear-gradient(135deg, #198754, #0096c7);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-book::after {
+      display: none !important;
+    }
+
+    .btn-book:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.35);
+      background: linear-gradient(135deg, #146c43, #0077b6);
+    }
+
+    /* إخفاء عناصر الموبايل في الشاشات الكبيرة */
+    .menu-toggle,
+    .hamburger,
+    .mobile-btn {
+      display: none;
+    }
+
+    /* قسم الهيرو (Hero Section) */
+    .hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background-image: url('https://i.pinimg.com/originals/b4/a9/49/b4a94939db54040952bc3d98db1db817.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    /* طبقة شفافية فوق الخلفية المتحركة لوضوح الكلام */
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(2, 62, 138, 0.72), rgba(0, 119, 182, 0.55));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      max-width: 720px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #e2e8f0;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-hero-call {
+      background-color: #ffffff;
+      color: #023e8a;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-hero-call:hover {
+      background-color: #e0f2fe;
+      transform: translateY(-2px);
+    }
+
+    /* التجاوب مع شاشات الموبايل والتابلت */
+    @media (max-width: 900px) {
+      .desktop-btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        font-size: 24px;
+        color: #023e8a;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .mobile-btn {
+        display: inline-flex;
+        margin-top: 8px;
+      }
+
+      .menu-toggle:checked ~ .nav-links {
+        max-height: 420px;
+        padding: 20px;
+      }
+
+      .hero-section {
+        min-height: 75vh;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <video src="VN٢٠٢٦١١١٦_٢١٥٤٥٢.mp4" width="300px" height="300px" controls></video>
+
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        <img class="logo-icon" src="https://minasaad123.github.io/dr-mayer-ashraf/assets/img/avatar.webp" alt="د. مير أشرف">
+        <div class="logo-text">
+          <span class="dr-name">د. مير أشرف</span>
+          <span class="dr-specialty">علاج طبيعي</span>
+        </div>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <nav class="nav-links">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#about">عن الطبيب</a>
+        <a href="#services">الخدمات الطبية</a>
+        <a href="#reviews">آراء المرضى</a>
+        <a href="tel:+201201924162">تواصل معنا</a>
+        <a href="https://wa.me/201201924162?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D8%8C%20%D9%85%D8%B9%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%A7%D9%8A%D8%B1" target="_blank" class="btn-book mobile-btn">
+          تواصل على الواتساب
+        </a>
+      </nav>
+
+      <a href="https://wa.me/201201924162?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D8%8C%20%D9%85%D8%B9%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%A7%D9%8A%D8%B1" target="_blank" class="btn-book desktop-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        تواصل عبر الوتساب
+      </a>
+
+    </div>
+  </header>
+
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <span class="hero-badge">رعاية متخصصة وتأهيل حركي</span>
+      <h1 class="hero-title">عيادة د. مير أشرف للعلاج الطبيعي والتأهيل</h1>
+      <p class="hero-subtitle">
+        نساعدك على استعادة حركتك وتخفيف الألم بأحدث وسائل العلاج الطبيعي والبرنامج التأهيلي المناسب لحالتك بكل أمان واهتمام.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/201201924162?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D8%8C%20%D9%85%D8%B9%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%A7%D9%8A%D8%B1" target="_blank" class="btn-book">
+          <i class="fa-brands fa-whatsapp"></i>
+          احجز عبر الواتساب
+        </a>
+        <a href="tel:+201201924162" class="btn-hero-call">
+          <i class="fa-solid fa-phone"></i>
+          اتصل الآن
+        </a>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
