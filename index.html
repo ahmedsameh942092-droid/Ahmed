@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عيادة د. مير أشرف - علاج طبيعي</title>
+  <title>عيادة د. ماير أشرف - علاج طبيعي</title>
   <!-- خط القاهرة من جوجل -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <!-- مكتبة أيقونات Font Awesome -->
@@ -25,6 +25,47 @@
     body {
       background-color: #f4f8fb;
       color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background-color: #e0f2fe;
+      color: #0077b6;
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      color: #64748b;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 16px;
     }
 
     /* تصميم الناف بار */
@@ -98,7 +139,6 @@
       padding: 5px 0;
     }
 
-    /* خط سفلي متحرك عند تمرير الماوس */
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -126,7 +166,7 @@
       background: linear-gradient(135deg, #198754, #0096c7);
       color: #ffffff !important;
       text-decoration: none;
-      padding: 10px 22px;
+      padding: 11px 22px;
       border-radius: 50px;
       font-weight: 700;
       font-size: 15px;
@@ -135,6 +175,8 @@
       gap: 8px;
       box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-book::after {
@@ -145,6 +187,16 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 119, 182, 0.35);
       background: linear-gradient(135deg, #146c43, #0077b6);
+    }
+
+    .btn-instapay {
+      background: linear-gradient(to top right, #3b1d82, #b5179e);
+      box-shadow: 0 4px 15px rgba(181, 23, 158, 0.28);
+    }
+
+    .btn-instapay:hover {
+      background: linear-gradient(to top right, #2b1363, #961080);
+      box-shadow: 0 6px 20px rgba(181, 23, 158, 0.38);
     }
 
     /* إخفاء عناصر الموبايل في الشاشات الكبيرة */
@@ -168,7 +220,6 @@
       overflow: hidden;
     }
 
-    /* طبقة شفافية فوق الخلفية المتحركة لوضوح الكلام */
     .hero-section::before {
       content: "";
       position: absolute;
@@ -217,6 +268,7 @@
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 14px;
     }
 
@@ -224,7 +276,7 @@
       background-color: #ffffff;
       color: #023e8a;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 11px 24px;
       border-radius: 50px;
       font-weight: 700;
       font-size: 15px;
@@ -237,6 +289,192 @@
     .btn-hero-call:hover {
       background-color: #e0f2fe;
       transform: translateY(-2px);
+    }
+
+    /* قسم عن الطبيب */
+    .about-section {
+      background-color: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-card-img {
+      background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #bae6fd;
+    }
+
+    .about-card-img img {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0077b6;
+      margin-bottom: 16px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .highlight-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 14px;
+    }
+
+    .highlight-box i {
+      color: #0077b6;
+      font-size: 18px;
+    }
+
+    /* قسم الخدمات والأجهزة والمعدات */
+    .services-section {
+      background-color: #f4f8fb;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .info-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 119, 182, 0.12);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background-color: #e0f2fe;
+      color: #0077b6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      color: #475569;
+      font-size: 14.5px;
+    }
+
+    /* قسم آراء المرضى والتعليقات */
+    .reviews-section {
+      background-color: #ffffff;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-bottom: 42px;
+    }
+
+    .review-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .patient-name {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 16px;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+    }
+
+    .review-text {
+      color: #475569;
+      font-size: 14.5px;
+    }
+
+    .comment-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: #f4f8fb;
+      border: 1px solid #dbeafe;
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .comment-box h3 {
+      color: #023e8a;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background-color: #ffffff;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .form-control:focus {
+      border-color: #0077b6;
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
     }
 
     /* التجاوب مع شاشات الموبايل والتابلت */
@@ -273,7 +511,7 @@
       }
 
       .menu-toggle:checked ~ .nav-links {
-        max-height: 420px;
+        max-height: 440px;
         padding: 20px;
       }
 
@@ -293,6 +531,16 @@
       .hero-buttons {
         justify-content: center;
       }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+        text-align: right;
+      }
     }
   </style>
 </head>
@@ -302,7 +550,7 @@
     <div class="nav-container">
 
       <a href="#" class="logo">
-        <img class="logo-icon" src="https://minasaad123.github.io/dr-mayer-ashraf/assets/img/avatar.webp" alt="د. مير أشرف">
+        <img class="logo-icon" src="https://minasaad123.github.io/dr-mayer-ashraf/assets/img/avatar.webp" alt="د. ماير أشرف">
         <div class="logo-text">
           <span class="dr-name">د. ماير أشرف</span>
           <span class="dr-specialty">علاج طبيعي</span>
@@ -317,7 +565,7 @@
       <nav class="nav-links">
         <a href="#home" class="active">الرئيسية</a>
         <a href="#about">عن الطبيب</a>
-        <a href="#services">الخدمات الطبية</a>
+        <a href="#services">الخدمات والأجهزة</a>
         <a href="#reviews">آراء المرضى</a>
         <a href="tel:+201201924162">تواصل معنا</a>
         <a href="https://wa.me/201201924162?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D8%8C%20%D9%85%D8%B9%20%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D9%85%D8%A7%D9%8A%D8%B1" target="_blank" class="btn-book mobile-btn">
@@ -336,7 +584,7 @@
   <section id="home" class="hero-section">
     <div class="hero-content">
       <span class="hero-badge">رعاية متخصصة وتأهيل حركي</span>
-      <h1 class="hero-title"> د. ماير أشرف للعلاج الطبيعي والتأهيل</h1>
+      <h1 class="hero-title">د. ماير أشرف للعلاج الطبيعي والتأهيل</h1>
       <p class="hero-subtitle">
         نساعدك على استعادة حركتك وتخفيف الألم بأحدث وسائل العلاج الطبيعي والبرنامج التأهيلي المناسب لحالتك بكل أمان واهتمام.
       </p>
@@ -345,6 +593,12 @@
           <i class="fa-brands fa-whatsapp"></i>
           احجز عبر الواتساب
         </a>
+
+        <a href="https://ipn.eg/S/mayer11/instapay/1RFFpz" target="_blank" class="btn-book btn-instapay">
+          <i class="fa-solid fa-building-columns"></i>
+          ادفع عبر InstaPay
+        </a>
+
         <a href="tel:+201201924162" class="btn-hero-call">
           <i class="fa-solid fa-phone"></i>
           اتصل الآن
@@ -352,6 +606,229 @@
       </div>
     </div>
   </section>
+
+  <!-- قسم عن الطبيب -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">عن الطبيب</span>
+        <h2 class="section-title">د. ماير أشرف - أخصائي العلاج الطبيعي</h2>
+        <p class="section-desc">
+          متابعة دقيقة لكل حالة ووضع خطة علاجية متكاملة تجمع بين الأجهزة الطبية الحديثة والتمارين التأهيلية.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card-img">
+          <img src="https://minasaad123.github.io/dr-mayer-ashraf/assets/img/avatar.webp" alt="د. ماير أشرف">
+          <h3 style="color: #023e8a; font-size: 20px; font-weight: 800;">د. ماير أشرف</h3>
+          <p style="color: #475569; font-size: 14px; font-weight: 600;">علاج طبيعي وتأهيل حركي وإصابات</p>
+        </div>
+
+        <div>
+          <p style="font-size: 16px; color: #334155; margin-bottom: 14px;">
+            نركز في العيادة على تشخيص المشكلة الحركية بدقة وتخفيف آلام العمود الفقري والمفاصل والعضلات، مع برامج تأهيل ما بعد العمليات والإصابات الرياضية بأسلوب علمي ومريح للمريض.
+          </p>
+          <p style="font-size: 16px; color: #334155;">
+            كل جلسة بتتم وفق تقييم واضح لحالة المريض ومتابعة مستمرة لتحسن الحركة والمرونة وتقليل الألم تدريجياً.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <i class="fa-solid fa-user-doctor"></i>
+              <span>خطة علاج مخصصة لكل حالة</span>
+            </div>
+            <div class="highlight-box">
+              <i class="fa-solid fa-bolt"></i>
+              <span>أجهزة علاج طبيعي حديثة</span>
+            </div>
+            <div class="highlight-box">
+              <i class="fa-solid fa-person-running"></i>
+              <span>تأهيل حركي وإصابات</span>
+            </div>
+            <div class="highlight-box">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>متابعة مستمرة للنتائج</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الخدمات والأجهزة والمعدات -->
+  <section id="services" class="services-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">الأجهزة والمعدات الطبية</span>
+        <h2 class="section-title">الخدمات والأجهزة المستخدمة في العيادة</h2>
+        <p class="section-desc">
+          مجموعة متكاملة من الأجهزة والمعدات العلاجية والتأهيلية لدعم سرعة التعافي وتخفيف الألم.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <h3>أجهزة العلاج الكهربائي والموجات فوق الصوتية</h3>
+          <p>
+            أجهزة تنبيه عضلي وتسكين ألم وموجات فوق صوتية (Ultrasound / TENS) لتقليل الالتهابات وتحسين الدورة الدموية في الأنسجة.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <h3>معدات التمارين والتأهيل الحركي</h3>
+          <p>
+            أدوات تقوية العضلات، كرات التوازن، والأشرطة المرنة لاستعادة المدى الحركي للمفاصل وتأهيل ما بعد الكسور والعمليات.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fa-solid fa-hands"></i>
+          </div>
+          <h3>تقنيات العلاج اليدوي (Manual Therapy)</h3>
+          <p>
+            أساليب يدوية متخصصة لتحسين حركة المفاصل وفك التيبّس العضلي وتخفيف الضغط على الفقرات والعضلات المشدودة.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon">
+            <i class="fa-solid fa-temperature-high"></i>
+          </div>
+          <h3>وسائل العلاج الحراري والبارد</h3>
+          <p>
+            كمادات حرارية وباردة وأجهزة تسخين عميق للمساعدة في استرخاء العضلات وتقليل التورم والآلام الحادة والمزمنة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم آراء المرضى والتعليقات -->
+  <section id="reviews" class="reviews-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">آراء المرضى</span>
+        <h2 class="section-title">ماذا يقول المرضى عن تجربتهم؟</h2>
+        <p class="section-desc">
+          آراء وتعليقات المرضى حول المتابعة والاهتمام وتحسن الحالة خلال الجلسات.
+        </p>
+      </div>
+
+      <div class="reviews-grid" id="reviewsList">
+        <div class="review-card">
+          <div class="review-header">
+            <span class="patient-name">أستاذ كريم حسن</span>
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+          </div>
+          <p class="review-text">
+            "متابعة ممتازة وشرح واضح لكل خطوة، وحسيت بتحسن كبير في ألم الظهر والحركة بعد الجلسات."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="patient-name">أستاذة منى سمير</span>
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+          </div>
+          <p class="review-text">
+            "تعامل راقٍ جداً وأجهزة منظمة، والتمارين العلاجية كانت مناسبة جداً لحالتي وسهلة التطبيق."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="patient-name">أستاذ طارق عادل</span>
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+          </div>
+          <p class="review-text">
+            "تجربة مريحة جداً في التأهيل بعد الإصابة، والتزام بالمواعيد ومتابعة مستمرة."
+          </p>
+        </div>
+      </div>
+
+      <div class="comment-box">
+        <h3>أضف تعليقك أو رأيك</h3>
+        <form id="commentForm">
+          <div class="form-group">
+            <input type="text" id="patientNameInput" class="form-control" placeholder="اكتب اسمك" required>
+          </div>
+          <div class="form-group">
+            <textarea id="patientCommentInput" class="form-control" placeholder="اكتب تعليقك أو تجربتك مع العيادة..." required></textarea>
+          </div>
+          <button type="submit" class="btn-book">
+            <i class="fa-regular fa-paper-plane"></i>
+            إرسال التعليق
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const commentForm = document.getElementById('commentForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    commentForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('patientNameInput').value.trim();
+      const comment = document.getElementById('patientCommentInput').value.trim();
+
+      if (!name || !comment) return;
+
+      const card = document.createElement('div');
+      card.className = 'review-card';
+
+      const header = document.createElement('div');
+      header.className = 'review-header';
+
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'patient-name';
+      nameSpan.textContent = name;
+
+      const starsSpan = document.createElement('span');
+      starsSpan.className = 'stars';
+      starsSpan.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>';
+
+      const textP = document.createElement('p');
+      textP.className = 'review-text';
+      textP.textContent = `"${comment}"`;
+
+      header.appendChild(nameSpan);
+      header.appendChild(starsSpan);
+      card.appendChild(header);
+      card.appendChild(textP);
+
+      reviewsList.prepend(card);
+      commentForm.reset();
+    });
+  </script>
 
 </body>
 </html>
